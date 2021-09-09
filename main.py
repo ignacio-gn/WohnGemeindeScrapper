@@ -3,6 +3,9 @@ TODO
 - Continue execution with errors in data collection
 - Fix occasional error in get_offer
 - Automatically detect on which page offers are sold-out
+- Check if Misc is working
+- Add option to ignore date limited offers
+- Fix date limit to offer showing last online time
 """
 
 from helpers import *
