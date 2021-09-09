@@ -14,7 +14,7 @@ from selenium.common.exceptions import NoSuchElementException
 # Setup ###########################################################################################
 def setup() -> None:
     # Setup os
-    os.chdir("/Users/Igo/Desktop/Python Programs/WG_Sucher")
+    os.chdir("/Users/Igo/Desktop/Python Programs/WohnungGemeindeScrapper")
 
     # Setup log
     logging.basicConfig(filename="logs.txt", level=logging.DEBUG,
@@ -186,11 +186,20 @@ def get_input() -> dict[str, int]:
     while True:
         price_min = None
         price_max = None
+        ppl_min = None
+        ppl_max = None
         try:
             price_min = int(input("Lowest price: "))
             price_max = int(input("Highest price: "))
+            ppl_min = int(input("Min size: "))
+            ppl_max = int(input("Max size: "))
         except TypeError:
             print("Please enter a valid integer")
             continue
         break
-    return {"min": price_min, "max": price_max}
+    return {
+            "min": price_min,
+            "max": price_max,
+            "ppl_min": ppl_min,
+            "ppl_max": ppl_max
+            }

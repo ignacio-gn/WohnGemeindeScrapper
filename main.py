@@ -16,11 +16,11 @@ if __name__ == "__main__":
     setup()
 
     # Get input
-    price_range = get_input()
+    settings = get_input()
 
     # Create browser object
     browser = webdriver.Firefox(executable_path="/usr/local/Cellar/geckodriver/0.28.0/bin/geckodriver")
-    browser.get("https://www.wg-gesucht.de/1-zimmer-wohnungen-in-Munchen.90.1.1.0.html")
+    browser.get(f"https://www.wg-gesucht.de/wg-zimmer-in-Munchen.90.0.1.0.html?offer_filter=1&city_id=90&sort_column=0&noDeact=1&categories%5B%5D=0&rent_types%5B%5D=0&rMax={settings['max']}&radDis=10000&wgMnF={settings['ppl_min']}&wgMxT={settings['ppl_max']}&wgAge=18")
 
     # Accept cookies, if needed
     approve_cookies(browser)
