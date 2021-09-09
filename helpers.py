@@ -14,7 +14,7 @@ from selenium.common.exceptions import NoSuchElementException
 # Setup ###########################################################################################
 def setup() -> None:
     # Setup os
-    os.chdir("/Users/Igo/Desktop/Python Programs/WohnungGemeindeScrapper")
+    os.chdir("/Users/Igo/Desktop/Python Programs/WohnGemeindeScrapper")
 
     # Setup log
     logging.basicConfig(filename="logs.txt", level=logging.DEBUG,
@@ -33,7 +33,7 @@ def setup() -> None:
 def get_pages_valid_offers(driver: webdriver,
                            offer_class: str,
                            price_xpath: str,
-                           price_range: dict[str, int]):
+                           settings: dict[str, int]):
     # Local variables
     offers_list = driver.find_elements_by_class_name(offer_class)
     output = []
@@ -43,7 +43,7 @@ def get_pages_valid_offers(driver: webdriver,
             local_price = clean_price(offer.find_element_by_xpath(price_xpath).text)
         except NoSuchElementException:
             return None
-        if price_range["min"] <= local_price <= price_range["max"]:
+        if settings["min"] <= local_price <= settings["max"]:
             local_link = offer.find_element_by_xpath("./div/div[2]/div[1]/div[1]/h3/a").get_attribute("href")
             output.append(local_link)
 
@@ -53,7 +53,7 @@ def get_pages_valid_offers(driver: webdriver,
 # Get next page's link ############################################################################
 def get_next_page_url(driver: webdriver) -> str:
     outp = None
-    i = 16
+    i = 20
     while i > 0:
         try:
             outp = driver.find_element_by_css_selector(
@@ -84,7 +84,6 @@ def get_offer(driver: webdriver) -> dict[str: str]:
         output["price"] = driver.find_element_by_css_selector("#graph_wrapper > div:nth-child(2) > label:nth-child(1)").text
     except NoSuchElementException:
         return None
-    output["rooms"] = driver.find_element_by_css_selector("#rent_wrapper > div:nth-child(2) > label:nth-child(1)").text
     output["size"] = driver.find_element_by_css_selector("div.print_inline:nth-child(2) > h2:nth-child(1)").text
     output["url"] = driver.current_url
     # Available since
@@ -115,6 +114,12 @@ def get_offer(driver: webdriver) -> dict[str: str]:
     output["misc"] = misc
     # Whitespace
     output[""] = ""
+    # Info
+    headers = driver.find_elements_by_class_name("wordWrap")
+    output["info"] = dict()
+    for i in range(len(headers)):
+        # header = headers[i].find_element_by_xpath("h3").text  # FIXME
+        output["info"][i] = headers[i].find_element_by_css_selector("p.freitext").text
 
     # Return formatted output
     return output
@@ -136,14 +141,14 @@ def create_workbook(title: str) -> tuple[xlsxwriter.Workbook, xlsxwriter.workboo
     headers = [
         "PRICE",
         "SIZE",
-        "ROOMS",
         "",
         "AV. SINCE",
         "AV. UNTIL",
         "",
         "URL",
         "",
-        "MISC"
+        "MISC",
+        "INFO"
     ]
     for i in range(len(headers)):
         worksheet.write(row, col, headers[i])
@@ -158,17 +163,18 @@ def write_data(worksheet: xlsxwriter.workbook.Worksheet, data_dict: dict[str: st
     col_map = [
         "price",
         "size",
-        "rooms",
         "",
         "av_since",
         "av_until",
         "",
         "url",
         "",
-        "misc"
+        "misc",
     ]
     for i in range(len(col_map)):
         worksheet.write(row, i, data_dict[col_map[i]])
+    for i in range(len(data_dict["info"])):
+        worksheet.write(row, i + len(col_map), data_dict["info"][i])  # FIXME
 
 
 # ===============================================
@@ -200,6 +206,6 @@ def get_input() -> dict[str, int]:
     return {
             "min": price_min,
             "max": price_max,
-            "ppl_min": ppl_min,
-            "ppl_max": ppl_max
+            "ppl_min": ppl_min - 1,
+            "ppl_max": ppl_max - 1
             }

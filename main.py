@@ -10,6 +10,7 @@ TODO
 
 from helpers import *
 from selenium import webdriver
+from selenium.common.exceptions import InvalidArgumentException
 
 if __name__ == "__main__":
     # Setup
@@ -35,14 +36,14 @@ if __name__ == "__main__":
         # Find next page
         next_page = get_next_page_url(browser)
         # Check issues
-        if next_page == None:
-            print("Issues in local_data")
-            continue
+        if next_page is None:
+            print("Issues in next_data")
+
         # Find offers
         valid_offers = get_pages_valid_offers(driver=browser,
                                               offer_class="offer_list_item",
                                               price_xpath="./div/div[2]/div[2]/div[1]/b",
-                                              price_range=price_range
+                                              settings=settings
                                               )
         if valid_offers is not None:
             num_offers = len(valid_offers)
@@ -73,7 +74,13 @@ if __name__ == "__main__":
             i += 1
 
         # Pass page
-        browser.get(next_page)
+        if next_page is not None:
+            try:
+                browser.get(next_page)
+            except InvalidArgumentException:
+                break
+        else:
+            break
         pages += 1
 
     # Close objects
