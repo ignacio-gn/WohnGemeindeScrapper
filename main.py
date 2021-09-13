@@ -33,7 +33,7 @@ if __name__ == "__main__":
     # MAIN LOOP
     pages = 1
     i = 1
-    while pages < 2:
+    while pages < 15:
         # Find next page
         next_page = get_next_page_url(browser)
         # Check issues

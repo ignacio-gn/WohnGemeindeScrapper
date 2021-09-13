@@ -53,7 +53,7 @@ def get_pages_valid_offers(driver: webdriver,
 # Get next page's link ############################################################################
 def get_next_page_url(driver: webdriver) -> str:
     outp = None
-    i = 20
+    i = 40
     while i > 0:
         try:
             outp = driver.find_element_by_css_selector(
