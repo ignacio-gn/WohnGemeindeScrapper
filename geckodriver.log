@@ -751,3 +751,96 @@ JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILU
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1631212378890	geckodriver	INFO	Listening on 127.0.0.1:53082
+1631212378904	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/n4/v2qy6l2d7kl0xhrs561r9b0h0000gn/T/rust_mozprofileTgNl3z"
+1631212380413	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/n4/v2qy6l2d7kl0xhrs561r9b0h0000gn/T/rust_mozprofileTgNl3z/search.json.mozlz4", (void 0)))
+console.error: BackgroundUpdate: 
+  _reasonsToNotScheduleUpdates: Failed to check for Maintenance Service Registry Key: [Exception... "Component returned failure code: 0x80004001 (NS_ERROR_NOT_IMPLEMENTED) [nsIUpdateProcessor.getServiceRegKeyExists]"  nsresult: "0x80004001 (NS_ERROR_NOT_IMPLEMENTED)"  location: "JS frame :: resource://gre/modules/BackgroundUpdate.jsm :: _reasonsToNotScheduleUpdates :: line 243"  data: no]
+1631212383181	Marionette	INFO	Listening on port 53087
+1631212383296	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+_RegisterApplication(), FAILED TO establish the default connection to the WindowServer, _CGSDefaultConnection() is NULL.
+1631212422041	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1631212453967	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1631212454022	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript error: https://68e3aa769a66312f5cd051b7ce3a1f26.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html?n=2, line 13: ReferenceError: advancedStoreTag is not defined
+JavaScript error: https://analytics.webgains.io/pvClk.min.js, line 1: SecurityError: The operation is insecure.
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://s0.2mdn.net/879366/Enabler_01_246.js, line 174: TypeError: d is null
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+1631212552660	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://s0.2mdn.net/879366/Enabler_01_246.js, line 174: TypeError: d is null
+JavaScript error: https://s0.2mdn.net/879366/Enabler_01_246.js, line 174: TypeError: d is null
+JavaScript error: https://tpc.googlesyndication.com/sodar/Enqz_20U.html, line 11: uncaught exception: 7
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://tpc.googlesyndication.com/sadbundle/$csp%3Der3$/2036904149781913091/index.html#t=5286608629417905800&p=https%3A%2F%2F115c61e3ed3f4297d86e413d4c880fc1.safeframe.googlesyndication.com, line 131: TypeError: a.g is null
+JavaScript error: https://tpc.googlesyndication.com/sadbundle/$csp%3Der3$/2036904149781913091/index.html#t=5286608629417905800&p=https%3A%2F%2F115c61e3ed3f4297d86e413d4c880fc1.safeframe.googlesyndication.com, line 146: TypeError: this.g is null
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+1631212683850	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1631212683861	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PMessagePort::Msg_PostMessages Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PMessagePort::Msg_PostMessages Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://analytics.webgains.io/pvClk.min.js, line 1: SecurityError: The operation is insecure.
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+JavaScript error: https://s1.adform.net/stoat/626/s1.adform.net/load/v/0.0.209/e/iwBBwADA/i/vCAv.IAAAAAoAA/r:types/ThirdParty, line 79: TypeError: a is undefined
+1631212963196	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1631212963199	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1631213019349	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: https://ad4m.at/r62eglto.js, line 1: TypeError: t.publisher is undefined
+1631213052897	Marionette	INFO	Stopped listening on port 53087
+JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 1695: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

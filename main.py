@@ -6,6 +6,7 @@ TODO
 - Check if Misc is working
 - Add option to ignore date limited offers
 - Fix date limit to offer showing last online time
+- IMPORTANT: Scrap for amount of people
 """
 
 from helpers import *
