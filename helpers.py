@@ -120,6 +120,8 @@ def get_offer(driver: webdriver) -> dict[str: str]:
     for i in range(len(headers)):
         # header = headers[i].find_element_by_xpath("h3").text  # FIXME
         output["info"][i] = headers[i].find_element_by_css_selector("p.freitext").text
+    # Mitbewohner
+    output["mitbewohner"] = driver.find_element_by_css_selector("#sliderTopTitle > span").title
 
     # Return formatted output
     return output
@@ -141,6 +143,7 @@ def create_workbook(title: str) -> tuple[xlsxwriter.Workbook, xlsxwriter.workboo
     headers = [
         "PRICE",
         "SIZE",
+        "MITBEWOHNER",
         "",
         "AV. SINCE",
         "AV. UNTIL",
@@ -163,6 +166,7 @@ def write_data(worksheet: xlsxwriter.workbook.Worksheet, data_dict: dict[str: st
     col_map = [
         "price",
         "size",
+        "mitbewohner",
         "",
         "av_since",
         "av_until",
