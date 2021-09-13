@@ -121,7 +121,25 @@ def get_offer(driver: webdriver) -> dict[str: str]:
         # header = headers[i].find_element_by_xpath("h3").text  # FIXME
         output["info"][i] = headers[i].find_element_by_css_selector("p.freitext").text
     # Mitbewohner
-    output["mitbewohner"] = driver.find_element_by_css_selector("#sliderTopTitle > span").title
+    try:  # FIXME: this is awful but its the only way it works :|
+        output["mitbewohner"] = driver.find_element_by_css_selector(".headlineContent > span:nth-child(2)")\
+            .get_attribute("title")
+    except NoSuchElementException:
+        try:
+            output["mitbewohner"] = driver.find_element_by_css_selector("#sliderTopTitle > span:nth-child(2)")\
+                .get_attribute("title")
+        except NoSuchElementException:
+            try:
+                output["mitbewohner"] = driver.find_element_by_css_selector("#sliderTopTitle > span:nth-child(2)") \
+                    .get_attribute(".headline-detailed-view-title > span:nth-child(2)")
+            except NoSuchElementException:
+                try:
+                    output["mitbewohner"] = driver.find_element_by_xpath("/html/body/div[4]/div[2]/div[6]/div[1]/div[1]/div/div[4]/div/h3/span") \
+                        .get_attribute(".headline-detailed-view-title > span:nth-child(2)")
+                except NoSuchElementException:
+                    output["mitbewohner"] = driver.find_element_by_css_selector(".headline-detailed-view-title > span:nth-child(2)") \
+                        .get_attribute(".headline-detailed-view-title > span:nth-child(2)")
+
 
     # Return formatted output
     return output
